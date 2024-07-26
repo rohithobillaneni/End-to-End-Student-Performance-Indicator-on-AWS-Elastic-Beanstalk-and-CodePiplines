@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .form-label {
+            color: #495057;
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #ced4da;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .prediction-result {
+            text-align: center;
+            margin-top: 20px;
+            color: #28a745;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title form-title">Student Exam Performance Indicator</h1>
+                <form action="{{ url_for('predict_datapoint') }}" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option selected disabled value="">Select your Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ethnicity" class="form-label">Race or Ethnicity</label>
+                            <select class="form-control" id="ethnicity" name="ethnicity" required>
+                                <option selected disabled value="">Select Ethnicity</option>
+                                <option value="group A">Group A</option>
+                                <option value="group B">Group B</option>
+                                <option value="group C">Group C</option>
+                                <option value="group D">Group D</option>
+                                <option value="group E">Group E</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parental_level_of_education" class="form-label">Parental Level of Education</label>
+                            <select class="form-control" id="parental_level_of_education" name="parental_level_of_education" required>
+                                <option selected disabled value="">Select Parent Education</option>
+                                <option value="associate's degree">Associate's degree</option>
+                                <option value="bachelor's degree">Bachelor's degree</option>
+                                <option value="high school">High school</option>
+                                <option value="master's degree">Master's degree</option>
+                                <option value="some college">Some college</option>
+                                <option value="some high school">Some high school</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="lunch" class="form-label">Lunch Type</label>
+                            <select class="form-control" id="lunch" name="lunch" required>
+                                <option selected disabled value="">Select Lunch Type</option>
+                                <option value="free/reduced">Free/Reduced</option>
+                                <option value="standard">Standard</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="test_preparation_course" class="form-label">Test Preparation Course</label>
+                            <select class="form-control" id="test_preparation_course" name="test_preparation_course" required>
+                                <option selected disabled value="">Select Test Course</option>
+                                <option value="none">None</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reading_score" class="form-label">Writing Score out of 100</label>
+                            <input type="number" class="form-control" id="reading_score" name="reading_score" placeholder="Enter your Writing score" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="writing_score" class="form-label">Reading Score out of 100</label>
+                            <input type="number" class="form-control" id="writing_score" name="writing_score" placeholder="Enter your Reading Score" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Predict your Maths Score</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <h2 class="prediction-result">The prediction is: {{ results }}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
