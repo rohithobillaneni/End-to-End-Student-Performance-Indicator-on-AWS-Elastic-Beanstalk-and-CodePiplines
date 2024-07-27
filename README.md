@@ -7,7 +7,6 @@ This project is an end-to-end machine learning application that predicts student
 
 ## Project Structure
 
-```
 ├── .ebextensions
 │   └── python.config
 ├── artifacts
@@ -42,7 +41,6 @@ This project is an end-to-end machine learning application that predicts student
 ├── README.md
 ├── requirements.txt
 └── setup.py
-```
 
 ## Getting Started
 
