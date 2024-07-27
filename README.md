@@ -1,52 +1,12 @@
-## END TO END ML PROJECT
-
-```markdown
 # Student Performance Indicator
 
-This project is an end-to-end machine learning application that predicts student performance based on various parameters. The project includes data ingestion, transformation, model training, and prediction components.
-
-## Project Structure
-
-├── .ebextensions
-│   └── python.config
-├── artifacts
-├── data.csv
-├── model.pkl
-├── preprocessor.pkl
-├── test.csv
-├── train.csv
-├── catboost_info
-├── notebook
-│   ├── 1. EDA STUDENT PERFORMANCE.ipynb
-│   └── 2. MODEL TRAINING.ipynb
-├── src
-│   ├── components
-│   │   ├── __init__.py
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   └── model_trainer.py
-│   ├── pipeline
-│   │   ├── __init__.py
-│   │   ├── predict_pipeline.py
-│   │   └── train_pipeline.py
-│   ├── templates
-│   │   ├── home.html
-│   │   ├── index.html
-│   │   └── __init__.py
-│   ├── application.py
-│   ├── exception.py
-│   ├── logger.py
-│   └── utils.py
-├── .gitignore
-├── README.md
-├── requirements.txt
-└── setup.py
+This project is an end-to-end machine learning application that predicts student performance based on various parameters. The project includes data ingestion, transformation, model training, and prediction components, wrapped in a user-friendly web interface.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.7 or higher
+- Python 3.8 or higher
 - Necessary Python libraries (listed in `requirements.txt`)
 
 ### Installation
@@ -54,8 +14,8 @@ This project is an end-to-end machine learning application that predicts student
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/student-performance-indicator.git
-cd student-performance-indicator
+git clone https://github.com/rohithobillaneni/MLProject.git
+cd MLProject
 ```
 
 2. Create a virtual environment and activate it:
@@ -77,6 +37,7 @@ pip install -r requirements.txt
 - **Data Transformation**: Applies preprocessing to the data.
 - **Model Training**: Trains the machine learning model.
 - **Prediction Pipeline**: Generates predictions using the trained model.
+- **Web Application**: Provides a user interface for making predictions.
 
 ### Usage
 
@@ -141,7 +102,3 @@ pip install -r requirements.txt
 - **README.md**: Project documentation.
 - **requirements.txt**: Python dependencies.
 - **setup.py**: Setup script for packaging.
-
-- Thank you to the authors of the libraries and tools used in this project.
-- Special thanks to the contributors and the community for their support.
-
